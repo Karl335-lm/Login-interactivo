@@ -109,16 +109,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             if (esValido) {
+
     const modalUsuario = document.getElementById("modal-usuario");
     const modalTextoUsuario = document.getElementById("modal-texto-usuario");
 
-    if (modalTextoUsuario) {
+    if (modalUsuario && modalTextoUsuario) {
         modalTextoUsuario.textContent =
             "¡Usuario registrado y validado correctamente!";
-    }
 
-    if (modalUsuario) {
         modalUsuario.classList.add("active");
+    } else {
+        console.error("No se encontró el modal de usuario.");
     }
 }
         });
