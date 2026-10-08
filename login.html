@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registro</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <div class="container" id="auth-container">
+        <!-- Formulario Iniciar Sesión (Lado Izquierdo) -->
+        <div class="container-form container-signin">
+            <form id="login-form" class="sign-in">
+                <h2>Iniciar Sesión</h2>
+                <div class="social-networks">
+                    <ion-icon name="logo-twitch"></ion-icon>
+                    <ion-icon name="logo-twitter"></ion-icon>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <ion-icon name="logo-tiktok"></ion-icon>
+                </div>
+                <span>Use su correo y contraseña</span>
+                <div class="container-input">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" id="login-correo" placeholder="Email" required>
+                </div>
+                <div class="container-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                <span id="login-error" style="color: red; font-size: 0.8rem; display: block; margin-top: 5px;"></span>
+                <a href="#">¿Olvidaste tu contraseña?</a>
+                <button type="submit" class="button" id="btn-login-submit">INICIAR SESIÓN</button>
+            </form>
+        </div>
+
+        <!-- Formulario Registrarse (Lado Derecho) -->
+        <div class="container-form container-signup">
+            <form id="register-form" class="sign-up">
+                <h2>Registrarse</h2>
+                <div class="social-networks">
+                    <ion-icon name="logo-twitch"></ion-icon>
+                    <ion-icon name="logo-twitter"></ion-icon>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <ion-icon name="logo-tiktok"></ion-icon>
+                </div>
+                <span>Use su correo electrónico para registrarse</span>
+                <div class="container-input">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" id="reg-nombre" placeholder="Nombre" required>
+                </div>
+                <span id="reg-err-nombre" style="color: red; font-size: 0.75rem;"></span>
+                
+                <div class="container-input">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" id="reg-correo" placeholder="Email" required>
+                </div>
+                <span id="reg-err-correo" style="color: red; font-size: 0.75rem;"></span>
+
+                <div class="container-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="reg-password" placeholder="Password" required>
+                </div>
+                <span id="reg-err-password" style="color: red; font-size: 0.75rem;"></span>
+
+                <button type="submit" class="button">REGISTRARSE</button>
+            </form>
+        </div>
+
+        <!-- Panel Verde Desplazable -->
+        <div class="container-welcome">
+            <!-- Mensaje Verde a la izquierda -->
+            <div class="welcome-panel welcome-left">
+                <h3>¡Hola!</h3>
+                <p>Regístrese con sus datos personales para usar todas las funciones del sitio</p>
+                <button type="button" class="button btn-outline" id="btn-to-signup">Iniciar Sesión</button>
+            </div>
+
+            <!-- Mensaje Verde a la derecha -->
+            <div class="welcome-panel welcome-right">
+                <h3>¡Bienvenido!</h3>
+                <p>Ingrese sus datos personales para usar todas las funciones del sitio</p>
+                <button type="button" class="button btn-outline" id="btn-to-signin">Registrarse</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- utileria.js desde el CDN-->
+    <script src="https://cdn.jsdelivr.net/gh/camicrts5-hash/utileria-js@master/js/utileria.js"></script>
+
+    <script src="js/login.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

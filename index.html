@@ -3,83 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Registro</title>
+    <title>Panel del Sistema</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="container">
-        <!-- Formulario Iniciar Sesión (Lado Izquierdo) -->
-        <div class="container-form container-signin">
-            <form class="sign-in">
-                <h2>Iniciar Sesión</h2>
-                <div class="social-networks">
-                    <ion-icon name="logo-twitch"></ion-icon>
-                    <ion-icon name="logo-twitter"></ion-icon>
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    <ion-icon name="logo-tiktok"></ion-icon>
-                </div>
-                <span>Use su correo y contraseña</span>
-                <div class="container-input">
-                    <ion-icon name="mail-outline"></ion-icon>
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <div class="container-input">
-                    <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input type="password" placeholder="Password" required>
-                </div>
-                <a href="#">¿Olvidaste tu contraseña?</a>
-                <button type="button" class="button">INICIAR SESIÓN</button>
-            </form>
-        </div>
-
-        <!-- Formulario Registrarse (Lado Derecho) -->
-        <div class="container-form container-signup">
-            <form class="sign-up">
-                <h2>Registrarse</h2>
-                <div class="social-networks">
-                    <ion-icon name="logo-twitch"></ion-icon>
-                    <ion-icon name="logo-twitter"></ion-icon>
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    <ion-icon name="logo-tiktok"></ion-icon>
-                </div>
-                <span>Use su correo electrónico para registrarse</span>
-                <div class="container-input">
-                    <ion-icon name="person-outline"></ion-icon>
-                    <input type="text" placeholder="Nombre" required>
-                </div>
-                <div class="container-input">
-                    <ion-icon name="mail-outline"></ion-icon>
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <div class="container-input">
-                    <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input type="password" placeholder="Password" required>
-                </div>
-                <button type="button" class="button">REGISTRARSE</button>
-            </form>
-        </div>
-
-        <!-- Panel Verde Desplazable -->
-        <div class="container-welcome">
-            <!-- Mensaje visible cuando se muestra Registrarse (Verde a la izquierda) -->
-            <div class="welcome-panel welcome-left">
-                <h3>¡Hola!</h3>
-                <p>Regístrese con sus datos personales para usar todas las funciones del sitio</p>
-                <button type="button" class="button btn-outline" id="btn-to-signup">Iniciar Sesión</button>
+    <div class="dashboard-container">
+        <!-- Sidebar lateral -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <h3>Mi Sistema</h3>
             </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" id="menu-inicio" class="active">Inicio</a></li>
+                <li><a href="#" id="menu-usuarios">Usuarios</a>
+                    <ul class="submenu" id="submenu-captura">
+                        <li><a href="#">Captura</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
 
-            <!-- Mensaje visible cuando se muestra Iniciar Sesión (Verde a la derecha) -->
-            <div class="welcome-panel welcome-right">
-                <h3>¡Bienvenido!</h3>
-                <p>Ingrese sus datos personales para usar todas las funciones del sitio</p>
-                <button type="button" class="button btn-outline" id="btn-to-signin">Registrarse</button>
-            </div>
+        <!-- Contenido principal -->
+        <div class="main-content">
+            <!-- Navbar superior -->
+            <!-- Aqui pegas el código -->
+
+            <!-- Sección Inicio (Visible al entrar) -->
+            <main class="content-body" id="seccion-inicio">
+                <h1>Bienvenido al Sistema</h1>
+                <p>Este sistema permite gestionar el registro y validación de usuarios y alumnos utilizando componentes modulares y la librería <strong>utileria.js</strong>.</p>
+                <div class="card" style="margin-top: 20px;">
+                    <h3>Acerca del Proyecto</h3>
+                    <p>Utiliza el menú lateral para navegar hacia el módulo de <strong>Captura</strong> y realizar los registros correspondientes con validaciones de correo, contraseñas seguras, números de control y cálculo de mayoría de edad.</p>
+                </div>
+            </main>
+
+            <!-- Sección de Trabajo -->
+            <main class="content-body" id="seccion-captura" style="display: none;">
+                <h1>Módulo de Captura</h1>
+                <p>Gestión y validación de usuarios y alumnos</p>
+
+                <div class="grid-forms">
+                    <!-- Formulario de Usuarios -->
+                    <div class="card">
+                        <h3>Captura de Usuario</h3>
+                        <form id="form-usuario">
+                            <div class="form-group">
+                                <label>Nombre de Usuario:</label>
+                                <input type="text" id="nombre-usuario" required>
+                                <span class="error-msg" id="err-nombre-usu"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Correo Electrónico:</label>
+                                <input type="email" id="correo-usuario" required>
+                                <span class="error-msg" id="err-correo"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Contraseña (con carácter especial):</label>
+                                <input type="password" id="pass-usuario" required>
+                                <span class="error-msg" id="err-pass"></span>
+                            </div>
+                            <button type="submit" class="btn-main">Guardar Usuario</button>
+                        </form>
+                    </div>
+
+                    <!-- Formulario de Alumnos -->
+                    <div class="card">
+                        <h3>Registro de Alumnos</h3>
+                        <form id="form-alumno">
+                            <div class="form-group">
+                                <label>Número de Control (Mín. 6 dígitos):</label>
+                                <input type="text" id="num-control" maxlength="6" placeholder="Ej. 24160000" required>
+                                <span class="error-msg" id="err-control"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Fecha de Nacimiento:</label>
+                                <input type="date" id="fecha-nacimiento" required>
+                                <span class="error-msg" id="err-fecha"></span>
+                            </div>
+                            <button type="submit" class="btn-main">Validar Alumno</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
         </div>
     </div>
 
+    <!-- Modal de edad requerido -->
+    <div class="modal-overlay" id="modal-edad">
+        <div class="modal-content">
+            <h3>Resultado de Validación de Edad</h3>
+            <p id="modal-texto-edad"></p>
+            <button id="cerrar-modal" class="btn-main">Aceptar</button>
+        </div>
+    </div>
+
+    <!-- Librería utileria.js -->
+    <script src="https://cdn.jsdelivr.net/gh/camicrts5-hash/utileria-js@master/js/utileria.js"></script>
     <script src="js/script.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
