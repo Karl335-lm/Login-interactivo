@@ -9,98 +9,321 @@
 <body>
 
     <div class="dashboard-container">
+
         <!-- Sidebar lateral -->
         <aside class="sidebar" id="sidebar">
+
             <div class="sidebar-brand">
                 <h3>Mi Sistema</h3>
             </div>
+
             <ul class="sidebar-menu">
-                <li><a href="#" id="menu-inicio" class="active">Inicio</a></li>
-                <li><a href="#" id="menu-usuarios">Usuarios</a>
+
+                <li>
+                    <a href="#" id="menu-inicio" class="active">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" id="menu-usuarios">
+                        Usuarios
+                    </a>
+
                     <ul class="submenu" id="submenu-captura">
-                        <li><a href="#">Captura</a></li>
+                        <li>
+                            <a href="#">
+                                Captura
+                            </a>
+                        </li>
                     </ul>
                 </li>
+
             </ul>
+
         </aside>
+
 
         <!-- Contenido principal -->
         <div class="main-content">
+
             <!-- Navbar superior -->
-            <!-- Aqui pegas el código -->
+            <header class="navbar">
+
+                <button id="sidebar-toggle"class="hamburger-btn">☰
+                </button>
+
+                <div class="user-menu-container">
+
+                    <span id="user-display-name"
+                        class="user-display-name">
+                        Cargando...
+                    </span>
+
+                    <!-- Menú desplegable para Salir del sistema -->
+                    <div
+                        class="user-dropdown"
+                        id="user-dropdown">
+
+                        <a href="#" id="btn-logout">
+                            Salir del sistema
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </header>
+
 
             <!-- Sección Inicio (Visible al entrar) -->
-            <main class="content-body" id="seccion-inicio">
+            <main
+                class="content-body"
+                id="seccion-inicio">
+
                 <h1>Bienvenido al Sistema</h1>
-                <p>Este sistema permite gestionar el registro y validación de usuarios y alumnos utilizando componentes modulares y la librería <strong>utileria.js</strong>.</p>
+
+                <p>
+                    Este sistema permite gestionar el registro y
+                    validación de usuarios y alumnos utilizando
+                    componentes modulares y la librería
+                    <strong>utileria.js</strong>.
+                </p>
+
                 <div class="card" style="margin-top: 20px;">
+
                     <h3>Acerca del Proyecto</h3>
-                    <p>Utiliza el menú lateral para navegar hacia el módulo de <strong>Captura</strong> y realizar los registros correspondientes con validaciones de correo, contraseñas seguras, números de control y cálculo de mayoría de edad.</p>
+
+                    <p>
+                        Utiliza el menú lateral para navegar hacia
+                        el módulo de <strong>Captura</strong> y
+                        realizar los registros correspondientes con
+                        validaciones de correo, contraseñas seguras,
+                        números de control y cálculo de mayoría de edad.
+                    </p>
+
                 </div>
+
             </main>
 
+
             <!-- Sección de Trabajo -->
-            <main class="content-body" id="seccion-captura" style="display: none;">
+            <main
+                class="content-body"
+                id="seccion-captura"
+                style="display: none;">
+
                 <h1>Módulo de Captura</h1>
-                <p>Gestión y validación de usuarios y alumnos</p>
+
+                <p>
+                    Gestión y validación de usuarios y alumnos
+                </p>
+
 
                 <div class="grid-forms">
+
                     <!-- Formulario de Usuarios -->
                     <div class="card">
+
                         <h3>Captura de Usuario</h3>
+
                         <form id="form-usuario">
+
                             <div class="form-group">
-                                <label>Nombre de Usuario:</label>
-                                <input type="text" id="nombre-usuario" required>
-                                <span class="error-msg" id="err-nombre-usu"></span>
+
+                                <label>
+                                    Nombre de Usuario:
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nombre-usuario"
+                                    required>
+
+                                <span
+                                    class="error-msg"
+                                    id="err-nombre-usu">
+                                </span>
+
                             </div>
+
+
                             <div class="form-group">
-                                <label>Correo Electrónico:</label>
-                                <input type="email" id="correo-usuario" required>
-                                <span class="error-msg" id="err-correo"></span>
+
+                                <label>
+                                    Correo Electrónico:
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="correo-usuario"
+                                    required>
+
+                                <span
+                                    class="error-msg"
+                                    id="err-correo">
+                                </span>
+
                             </div>
+
+
                             <div class="form-group">
-                                <label>Contraseña (con carácter especial):</label>
-                                <input type="password" id="pass-usuario" required>
-                                <span class="error-msg" id="err-pass"></span>
+
+                                <label>
+                                    Contraseña (con carácter especial):
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="pass-usuario"
+                                    required>
+
+                                <span
+                                    class="error-msg"
+                                    id="err-pass">
+                                </span>
+
                             </div>
-                            <button type="submit" class="btn-main">Guardar Usuario</button>
+
+
+                            <button
+                                type="submit"
+                                class="btn-main">
+                                Guardar Usuario
+                            </button>
+
                         </form>
+
                     </div>
+
 
                     <!-- Formulario de Alumnos -->
                     <div class="card">
+
                         <h3>Registro de Alumnos</h3>
+
                         <form id="form-alumno">
+
                             <div class="form-group">
-                                <label>Número de Control (Mín. 6 dígitos):</label>
-                                <input type="text" id="num-control" maxlength="6" placeholder="Ej. 24160000" required>
-                                <span class="error-msg" id="err-control"></span>
+
+                                <label>
+                                    Número de Control (Mín. 6 dígitos):
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="num-control"
+                                    maxlength="6"
+                                    placeholder="Ej. 24160000"
+                                    required>
+
+                                <span
+                                    class="error-msg"
+                                    id="err-control">
+                                </span>
+
                             </div>
+
+
                             <div class="form-group">
-                                <label>Fecha de Nacimiento:</label>
-                                <input type="date" id="fecha-nacimiento" required>
-                                <span class="error-msg" id="err-fecha"></span>
+
+                                <label>
+                                    Fecha de Nacimiento:
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="fecha-nacimiento"
+                                    required>
+
+                                <span
+                                    class="error-msg"
+                                    id="err-fecha">
+                                </span>
+
                             </div>
-                            <button type="submit" class="btn-main">Validar Alumno</button>
+
+
+                            <button
+                                type="submit"
+                                class="btn-main">
+                                Validar Alumno
+                            </button>
+
                         </form>
+
                     </div>
+
                 </div>
+
             </main>
+
         </div>
+
     </div>
 
+
     <!-- Modal de edad requerido -->
-    <div class="modal-overlay" id="modal-edad">
+    <div
+        class="modal-overlay"
+        id="modal-edad">
+
         <div class="modal-content">
-            <h3>Resultado de Validación de Edad</h3>
+
+            <h3>
+                Resultado de Validación de Edad
+            </h3>
+
             <p id="modal-texto-edad"></p>
-            <button id="cerrar-modal" class="btn-main">Aceptar</button>
+
+            <button
+                id="cerrar-modal"
+                class="btn-main">
+                Aceptar
+            </button>
+
         </div>
+      
+</div> 
+<!-- Modal de edad requerido -->
+<div class="modal-overlay" id="modal-edad">
+
+    <div class="modal-content">
+
+        <h3>Resultado de Validación de Edad</h3>
+
+        <p id="modal-texto-edad"></p>
+
+        <button id="cerrar-modal" class="btn-main">
+            Aceptar
+        </button>
+
     </div>
+
+</div>
+
+
+<!-- Modal de usuario registrado -->
+<div class="modal-overlay" id="modal-usuario">
+
+    <div class="modal-content">
+
+        <h3>Usuario registrado</h3>
+
+        <p id="modal-texto-usuario"></p>
+
+        <button id="cerrar-modal-usuario" class="btn-main">
+            Aceptar
+        </button>
+
+    </div>
+
+</div>
 
     <!-- Librería utileria.js -->
     <script src="https://cdn.jsdelivr.net/gh/camicrts5-hash/utileria-js@master/js/utileria.js"></script>
+
     <script src="js/script.js"></script>
+
 </body>
 </html>

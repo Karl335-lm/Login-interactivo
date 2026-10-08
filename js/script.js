@@ -109,9 +109,18 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             if (esValido) {
-                alert("¡Usuario registrado y validado correctamente!");
-                formUsuario.reset();
-            }
+    const modalUsuario = document.getElementById("modal-usuario");
+    const modalTextoUsuario = document.getElementById("modal-texto-usuario");
+
+    if (modalTextoUsuario) {
+        modalTextoUsuario.textContent =
+            "¡Usuario registrado y validado correctamente!";
+    }
+
+    if (modalUsuario) {
+        modalUsuario.classList.add("active");
+    }
+}
         });
     }
 
@@ -166,6 +175,15 @@ document.addEventListener("DOMContentLoaded", () => {
         cerrarModal.addEventListener("click", () => {
             modalEdad.classList.remove("active");
             formAlumno.reset();
+        });
+    }
+     const cerrarModalUsuario = document.getElementById("cerrar-modal-usuario");
+    const modalUsuario = document.getElementById("modal-usuario");
+
+    if (cerrarModalUsuario && modalUsuario && formUsuario) {
+        cerrarModalUsuario.addEventListener("click", () => {
+            modalUsuario.classList.remove("active");
+            formUsuario.reset();
         });
     }
 });
