@@ -248,7 +248,10 @@ if (formAlumno) {
 ![Pb7](img/form2.jpeg)
 
 >Validaciones:
-
-![Pb3](img/from3.jpeg)
-![Pb3.1](img/form5.jpeg)
-![Pb4](img/form6.jpeg)
+![Pb12](img/val4.png)
+![Pb13](img/val3.png)
+![Pb14](img/val5.png)
+![Pb8](img/from3.jpeg)
+![Pb9](img/form5.jpeg)
+![Pb10](img/form6.jpeg)
+![Pb11](img/from3.jpeg)
